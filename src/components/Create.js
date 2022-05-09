@@ -38,6 +38,20 @@ export default function Create(){
         form.setFieldValue('ingredients', form.values.ingredients.filter((ing, i) => i != index))
     }
 
+    const [newStep, setNewStep] = useState('')
+
+    function onStep(value){
+        setNewStep(value)
+    }
+    function addStep(step){
+        form.setFieldValue('steps', [...form.values.steps, step])
+        console.log('form', form)
+        setNewStep('')
+    }
+    function removeStep(index) {
+        form.setFieldValue('steps', form.values.steps.filter((step, i) => i != index))
+    }
+
     return (
         <>
             <div>Create</div>
@@ -67,7 +81,6 @@ export default function Create(){
                                 return (
                                     <li key={`ingredient-${index}`}>
                                         <span>
-
                                             {ingredient.quantity} {ingredient.name}
                                         </span>
                                         <Button onClick={()=>removeIngredient(index)}>Remove</Button>
@@ -79,15 +92,43 @@ export default function Create(){
                     <div className={'ingredients'}>
                         <TextInput
                             name="Ingredient Quantity"
+                            placeholder="1 cup"
                             value={newIngredientQuantity}
                             onChange={(e) => onQuantity(e.target.value)}
                         />
                         <TextInput
                             name="Ingredient Name"
+                            placeholder="flour"
                             value={newIngredientName}
                             onChange={(e) => onName(e.target.value)}
                         />
                         <Button onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>Add</Button>
+                    </div>
+                </div>
+                <div>
+                    <div>Steps</div>
+                    <ol>
+                        {
+                            form?.values.steps?.map((step, index) => {
+                                return (
+                                    <li key={`step-${index}`}>
+                                        <span>
+                                            {step}
+                                        </span>
+                                        <Button onClick={()=>removeStep(index)}>Remove</Button>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ol>
+                    <div className={'steps'}>
+                        <TextInput
+                            name="Next Step"
+                            value={newStep}
+                            placeholder="Preheat oven to 350F"
+                            onChange={(e) => onStep(e.target.value)}
+                        />
+                        <Button onClick={() => addStep(newStep)}>Add</Button>
                     </div>
                 </div>
 

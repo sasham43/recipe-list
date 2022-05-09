@@ -22,6 +22,11 @@ export default function List() {
     return (
         <div>
             <h1>Recipe List</h1>
+            <div>
+                <Link to={`/create`}>
+                    Add
+                </Link>
+            </div>
             {/* <div className={`recipe-list-headers`}>
                 <div>Title</div>
                 <div>Year Created</div>

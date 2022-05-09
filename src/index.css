@@ -12,9 +12,31 @@ code {
     monospace;
 }
 
+.App {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+@media(max-width: 800px) {
+  .App {
+    padding-left: 25px;
+    padding-rigth: 25px;
+  }
+}
+
 .recipe-list-headers,
 .recipe-list-item {
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.ingredient-quantity {
+  margin-right: 5px;
+}
+
+.recipe-item ul,
+.recipe-item ol {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }

@@ -3,6 +3,8 @@ import { useForm } from '@mantine/form'
 import { Group, TextInput, Button } from '@mantine/core'
 import { DatePicker } from '@mantine/dates'
 
+import { saveRecipe } from '../recipes'
+
 
 export default function Create(){
     const form = useForm({
@@ -17,6 +19,7 @@ export default function Create(){
 
     function handleSubmit(values){
         console.log('values', values)
+        saveRecipe(values)
     }
 
     const [newIngredientQuantity, setNewIngredientQuantity] = useState('')
@@ -45,7 +48,6 @@ export default function Create(){
     }
     function addStep(step){
         form.setFieldValue('steps', [...form.values.steps, step])
-        console.log('form', form)
         setNewStep('')
     }
     function removeStep(index) {

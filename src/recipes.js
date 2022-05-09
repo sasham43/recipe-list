@@ -6,7 +6,7 @@ export async function getRecipes(params){
     let recipes = await recipeData.json()
 
     return recipes.map(recipe => {
-        let cookingMins = recipe.timers.reduce((prev, current) => {
+        let cookingMins = recipe.timers?.reduce((prev, current) => {
             return prev + current
         })
         // console.log('minutes', cookingMins)
@@ -28,4 +28,16 @@ export async function getRecipes(params){
             return true
         }
     })
+}
+
+export async function saveRecipe(recipe) {
+    let response = await fetch('http://localhost:3000/recipes', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(recipe)
+    })
+
+    console.log('save response', response)
 }

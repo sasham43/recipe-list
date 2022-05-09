@@ -16,7 +16,7 @@ export default function FavoriteCounter(props) {
     useEffect(() => {
         window.addEventListener('storage', checkNumFavorites)
 
-        console.log('checking local storage')
+        checkNumFavorites() // run initially
 
         return () => window.removeEventListener('storage', checkNumFavorites)
     }, [])

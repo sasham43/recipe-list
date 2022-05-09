@@ -2,6 +2,8 @@
     "recipes": [
     {
         "name": "Crock Pot Roast",
+        "creation_year": 1984,
+        "creator": "Ysbail Howell",
         "ingredients": [
             {
                 "quantity": "1",
@@ -46,6 +48,8 @@
     },
     {
         "name": "Roasted Asparagus",
+        "creation_year": 1992,
+        "creator": "Gaenor Gwilliam",
         "ingredients": [
             {
                 "quantity": "1 lb",
@@ -92,6 +96,8 @@
     },
     {
         "name": "Curried Lentils and Rice",
+        "creation_year": 1987,
+        "creator": "Rosie Jones",
         "ingredients": [
             {
                 "quantity": "1 quart",
@@ -137,6 +143,8 @@
     },
     {
         "name": "Big Night Pizza",
+        "creation_year": 1978,
+        "creator": "Garth Days",
         "ingredients": [
             {
                 "quantity": "5 teaspoons",
@@ -201,6 +209,8 @@
     },
     {
         "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
+        "creation_year": 2009,
+        "creator": "Maxen Bennion",
         "ingredients": [
             {
                 "quantity": "2",
@@ -258,6 +268,8 @@
     },
     {
         "name": "Mic's Yorkshire Puds",
+        "creation_year": 2015,
+        "creator": "Mostyn Havard",
         "ingredients": [
             {
                 "quantity": "200g",
@@ -307,6 +319,8 @@
     },
     {
         "name": "Old-Fashioned Oatmeal Cookies",
+        "creation_year": 1952,
+        "creator": "Morgan Wren",
         "ingredients": [
             {
                 "quantity": "1 cup",
@@ -398,6 +412,8 @@
     },
     {
         "name": "Blueberry Oatmeal Squares",
+        "creation_year": 2022,
+        "creator": "March Pembroke",
         "ingredients": [
             {
                 "quantity": "2-1/2 cups",
@@ -475,6 +491,8 @@
     },
     {
         "name": "Curried chicken salad",
+        "creation_year": 1987,
+        "creator": "Rosie Jones",
         "ingredients": [
             {
                 "quantity": "3",

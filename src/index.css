@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.recipe-list-headers,
+.recipe-list-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}

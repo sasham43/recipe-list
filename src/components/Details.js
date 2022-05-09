@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { getRecipes } from '../recipes'
+import Favorite from './Favorite'
 
 export default function Details(){
     let params = useParams()
@@ -12,7 +13,7 @@ export default function Details(){
     useEffect(() => {
         async function getRecipe(){
             let data = await getRecipes({index: params.index})
-console.log('ddata', data)
+            
             setRecipe(data[0])
         }
 
@@ -32,9 +33,10 @@ console.log('ddata', data)
                     {recipe.creator}
                 </div>
                 <div className={`recipe-item`}>
-                    <button>
+                    {/* <button>
                         Favorite
-                    </button>
+                    </button> */}
+                    <Favorite index={params.index} />
                 </div>
                 <div className={`recipe-item`}>
                     <h3>Ingredients</h3>

@@ -9,11 +9,11 @@ export async function getRecipes(params){
         let cookingMins = recipe.timers.reduce((prev, current) => {
             return prev + current
         })
-        console.log('minutes', cookingMins)
+        // console.log('minutes', cookingMins)
         let cookingHours = cookingMins / 60
-        console.log('hours', cookingHours)
+        // console.log('hours', cookingHours)
         let cookingTime = cookingHours.toFixed(2)
-        console.log('time', cookingTime)
+        // console.log('time', cookingTime)
         
         return {
             ...recipe,

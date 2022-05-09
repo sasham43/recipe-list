@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect } from 'react'
 import List from './components/List'
 import {
   BrowserRouter as Router,
@@ -9,6 +10,13 @@ import Details from './components/Details'
 import Create from './components/Create'
 
 function App() {
+  useEffect(() => {
+    // make sure favorites exists as an array in local storage
+    let favorites = window.localStorage.getItem('favorites')
+    if(!favorites){
+      window.localStorage.setItem('favorites', JSON.stringify([]))
+    }
+  }, [])
   return (
     <div className="App">
       <Router>

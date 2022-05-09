@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { getRecipes } from '../recipes'
+import Favorite from './Favorite'
 
 export default function List() {
 
@@ -31,19 +32,20 @@ export default function List() {
                 {
                     recipeList.map((recipe, index) => {
                         return (
-                            <Link to={`/details/${index}`}>
-                                <div key={`recipe-list-item-${index}`} className={`recipe-list-item`}>
-                                    <div>{recipe.name}</div>
+                                <div className={`recipe-list-item`}key={`recipe-list-item-${index}`}>
+                                    <Link to={`/details/${index}`} >
+                                        <div>{recipe.name}</div>
+                                    </Link>
                                     <div>{recipe.creation_year}</div>
                                     <div>{recipe.creator}</div>
                                     <div>{recipe.cookingTime}</div>
                                     <div>
-                                        <button>
+                                        {/* <button>
                                             Favorite
-                                        </button>
+                                        </button> */}
+                                        <Favorite index={index} />
                                     </div>
                                 </div>
-                            </Link>
                         )
                     })
                 }

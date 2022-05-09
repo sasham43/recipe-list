@@ -1,13 +1,15 @@
 import './App.css';
 import { useEffect } from 'react'
-import List from './components/List'
 import {
   BrowserRouter as Router,
   Route,
   Routes
 } from "react-router-dom";
+
+import List from './components/List'
 import Details from './components/Details'
 import Create from './components/Create'
+import FavoriteCounter from './components/FavoriteCounter'
 
 function App() {
   useEffect(() => {
@@ -19,6 +21,7 @@ function App() {
   }, [])
   return (
     <div className="App">
+      <FavoriteCounter />
       <Router>
         <Routes>
           <Route exact path="/" >

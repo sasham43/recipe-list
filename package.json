@@ -26,7 +26,8 @@
     ],
     "rules": {
       "no-unused-vars": "off",
-      "eqeqeq": "off"
+      "eqeqeq": "off",
+      "react-hooks/exhaustive-deps": "off"
     }
   },
   "browserslist": {

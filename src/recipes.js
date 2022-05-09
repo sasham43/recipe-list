@@ -6,9 +6,14 @@ export async function getRecipes(params){
     let recipes = await recipeData.json()
 
     return recipes.map(recipe => {
-        let cookingTime = recipe.timers.reduce((prev, current) => {
+        let cookingMins = recipe.timers.reduce((prev, current) => {
             return prev + current
         })
+        console.log('minutes', cookingMins)
+        let cookingHours = cookingMins / 60
+        console.log('hours', cookingHours)
+        let cookingTime = cookingHours.toFixed(2)
+        console.log('time', cookingTime)
         
         return {
             ...recipe,
@@ -17,7 +22,6 @@ export async function getRecipes(params){
     }).filter((recipe, index) => {
         // simulates get single recipe function
         // in a real app, I would store the main array in some sort of Redux state or Context API and access the individual recipe using an ID
-        console.log('index', index, params.index)
         if(params?.index !== undefined){
             return index == params.index
         } else {

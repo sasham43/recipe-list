@@ -26,7 +26,10 @@ console.log('ddata', data)
             {recipe ? <div>
                 <h2 className={`recipe-item`}>{recipe.name}</h2>
                 <div className={`recipe-item`}>
-                    <span>Cooking Time: </span> <span>{recipe.cookingTime/60} hours</span>
+                    <span>Cooking Time: </span> <span>{recipe.cookingTime} hours</span>
+                </div>
+                <div className={`recipe-item`}>
+                    {recipe.creator}
                 </div>
                 <div className={`recipe-item`}>
                     <h3>Ingredients</h3>

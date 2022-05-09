@@ -32,6 +32,11 @@ console.log('ddata', data)
                     {recipe.creator}
                 </div>
                 <div className={`recipe-item`}>
+                    <button>
+                        Favorite
+                    </button>
+                </div>
+                <div className={`recipe-item`}>
                     <h3>Ingredients</h3>
                     <ul>
                         {

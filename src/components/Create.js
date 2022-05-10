@@ -1,8 +1,9 @@
 import { useState, } from 'react'
 import { useForm } from '@mantine/form'
 import { Group, TextInput, Button, ActionIcon, Card } from '@mantine/core'
+import { Link } from 'react-router-dom'
 import { DatePicker } from '@mantine/dates'
-import { CircleMinus, CirclePlus } from 'tabler-icons-react';
+import { CircleMinus, CirclePlus, ArrowLeft } from 'tabler-icons-react';
 
 import { saveRecipe } from '../recipes'
 
@@ -58,6 +59,11 @@ export default function Create(){
     return (
         <>
             <Card shadow="sm" className={`page-card`}>
+                <Link to={`/`}>
+                    <ActionIcon>
+                        <ArrowLeft></ArrowLeft>
+                    </ActionIcon>
+                </Link>
                 <h1>Create Recipe</h1>
                 <form onSubmit={form.onSubmit(handleSubmit)}>
                     <TextInput

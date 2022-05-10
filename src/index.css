@@ -55,6 +55,10 @@ code {
 .recipe-list-item td {
   text-align: left;
 }
+.recipe-list-item td a {
+  /* text-decoration: none; */
+  color: black;
+}
 
 .create-step,
 .create-ingredient {

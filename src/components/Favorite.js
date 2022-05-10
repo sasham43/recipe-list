@@ -1,5 +1,7 @@
 
 import { useState, useEffect } from 'react'
+import { ActionIcon } from '@mantine/core'
+import { Heart } from 'tabler-icons-react'
 
 export default function Favorite(props) {
     const [isFavorite, setIsFavorite] = useState(false)
@@ -40,9 +42,12 @@ export default function Favorite(props) {
 
     return (
         <>
-            <button onClick={toggleFavorite}>
+            {/* <button onClick={toggleFavorite}>
                 Favorite { isFavorite ? 'y' : 'n'}
-            </button>
+            </button> */}
+            <ActionIcon onClick={() => toggleFavorite()}>
+                <Heart fill={isFavorite ? 'currentColor' : 'rgba(0,0,0,0)'}></Heart>
+            </ActionIcon>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Table } from '@mantine/core'
+import { Table, Card } from '@mantine/core'
 
 import { getRecipes } from '../recipes'
 import Favorite from './Favorite'
@@ -20,7 +20,7 @@ export default function List() {
     }, [])
 
     return (
-        <div>
+        <Card shadow="sm">
             <h1>Recipe List</h1>
             <div>
                 <Link to={`/create`}>
@@ -57,10 +57,10 @@ export default function List() {
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th>Year Created</th>
+                        <th className={`center-table-cell`}>Year Created</th>
                         <th>Creator</th>
-                        <th>Cooking Time</th>
-                        <th>Favorite</th>
+                        <th className={`center-table-cell`}>Cooking Time</th>
+                        <th className={`center-table-cell`}>Favorite</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,10 +73,10 @@ export default function List() {
                                             <div>{recipe.name}</div>
                                         </Link>
                                     </td>
-                                    <td>{recipe.createdDate.format('YYYY')}</td>
+                                    <td className={`center-table-cell`}>{recipe.createdDate.format('YYYY')}</td>
                                     <td>{recipe.creator}</td>
-                                    <td>{recipe.cookingTime}</td>
-                                    <td>
+                                    <td className={`center-table-cell`}>{recipe.cookingTime}</td>
+                                    <td className={`favorite-table-cell`}>
                                         <Favorite index={index} /> 
                                     </td>
                                 </tr>
@@ -85,6 +85,6 @@ export default function List() {
                     }
                 </tbody>
             </Table>
-        </div>
+        </Card>
     )
 }

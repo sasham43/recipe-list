@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Card } from '@mantine/core'
+import { useParams, Link } from 'react-router-dom'
+import { Card, ActionIcon } from '@mantine/core'
+import { ArrowLeft } from 'tabler-icons-react'
 
 import { getRecipes } from '../recipes'
 import Favorite from './Favorite'
@@ -25,9 +26,18 @@ export default function Details(){
     return (
         <>
             <Card shadow="sm" className={`page-card`}>
+                <Link to={`/`}>
+                    <ActionIcon>
+                        <ArrowLeft></ArrowLeft>
+                    </ActionIcon>
+                </Link>
                 <h1>Details</h1>
-                {recipe ? <div>
-                    <h2 className={`recipe-item`}>{recipe.name}</h2>
+                {recipe ? 
+                <div>
+                    <div className={`recipe-title`}>
+                        <Favorite index={params.index} />
+                        <h2 className={`recipe-item`}>{recipe.name}</h2>
+                    </div>
                     <div className={`recipe-item`}>
                         <span>Cooking Time: </span> <span>{recipe.cookingTime} hours</span>
                     </div>
@@ -36,12 +46,6 @@ export default function Details(){
                     </div>
                     <div className={`recipe-item`}>
                         {recipe.createdDate.format('MMMM D YYYY h a')}
-                    </div>
-                    <div className={`recipe-item`}>
-                        {/* <button>
-                            Favorite
-                        </button> */}
-                        <Favorite index={params.index} />
                     </div>
                     <div className={`recipe-card recipe-item`}>
                         <h3>Ingredients</h3>

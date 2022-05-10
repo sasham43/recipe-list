@@ -100,3 +100,18 @@ code {
   border: solid 1px #ccc;
   border-radius: 5px;
 }
+
+.recipe-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th.center-table-cell,
+td.center-table-cell {
+  text-align: center !important;
+}
+.favorite-table-cell {
+  display: flex;
+  justify-content: center;
+}

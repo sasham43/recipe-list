@@ -1,6 +1,6 @@
 import { useState, } from 'react'
 import { useForm } from '@mantine/form'
-import { Group, TextInput, NumberInput, Button, ActionIcon, Card } from '@mantine/core'
+import { Group, TextInput, NumberInput, Button, ActionIcon, Card, Popover, Text } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import { DatePicker } from '@mantine/dates'
 import { CircleMinus, CirclePlus, ArrowLeft } from 'tabler-icons-react';
@@ -22,10 +22,15 @@ export default function Create(){
     function handleSubmit(values){
         console.log('values', values)
         saveRecipe(values)
+
+        setOpened(true)
+        form.reset()
     }
 
     const [newIngredientQuantity, setNewIngredientQuantity] = useState('')
     const [newIngredientName, setNewIngredientName] = useState('')
+
+    const [opened, setOpened] = useState(false)
 
     function onQuantity(value){
         setNewIngredientQuantity(value)
@@ -88,7 +93,7 @@ export default function Create(){
                         required
                         label="Cooking Time (minutes)"
                         placeholder="120"
-                        {...form.getInputProps('creator')}
+                        {...form.getInputProps('cookingTime')}
                     />
                     <div className={`create-card`}>
                         <div>Ingredients</div>
@@ -164,7 +169,19 @@ export default function Create(){
                     </div>
 
                     <Group>
-                        <Button color="dark" title={'Save Recipe'} type="submit">Save</Button>
+                        {/* <Button color="dark" title={'Save Recipe'} type="submit">Save</Button> */}
+                        <Popover
+                            opened={opened}
+                            onClose={() => setOpened(false)}
+                            target={<Button color="dark" title={'Save Recipe'} type="submit">Save</Button>}
+                            width={260}
+                            position="bottom"
+                            withArrow
+                        >
+                            <div style={{ display: 'flex' }}>
+                                <Text size="sm">Recipe Saved!</Text>
+                            </div>
+                        </Popover>
                     </Group>
                 </form>
             </Card>

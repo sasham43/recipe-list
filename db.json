@@ -2,6 +2,7 @@
   "recipes": [
     {
       "id": 0,
+      "cookingTime": 120,
       "name": "Crock Pot Roast",
       "created": "2022-05-03T04:00:00.000Z",
       "creator": "Ysbail Howell",
@@ -49,6 +50,7 @@
     },
     {
       "id": 1,
+      "cookingTime": 45,
       "name": "Roasted Asparagus",
       "created": "2003-05-04T04:00:00.000Z",
       "creator": "Gaenor Gwilliam",
@@ -98,6 +100,7 @@
     },
     {
       "id": 2,
+      "cookingTime": 240,
       "name": "Curried Lentils and Rice",
       "created": "2014-05-05T04:00:00.000Z",
       "creator": "Rosie Jones",
@@ -146,6 +149,7 @@
     },
     {
       "id": 3,
+      "cookingTime": 160,
       "name": "Big Night Pizza",
       "created": "1993-05-06T04:00:00.000Z",
       "creator": "Garth Days",
@@ -213,6 +217,7 @@
     },
     {
       "id": 4,
+      "cookingTime": 30,
       "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
       "created": "1956-05-07T04:00:00.000Z",
       "creator": "Maxen Bennion",
@@ -273,6 +278,7 @@
     },
     {
       "id": 6,
+      "cookingTime": 240,
       "name": "Mic's Yorkshire Puds",
       "created": "1975-05-08T04:00:00.000Z",
       "creator": "Mostyn Havard",
@@ -325,6 +331,7 @@
     },
     {
       "id": 7,
+      "cookingTime": 120,
       "name": "Old-Fashioned Oatmeal Cookies",
       "created": "2022-05-09T04:00:00.000Z",
       "creator": "Morgan Wren",
@@ -419,6 +426,7 @@
     },
     {
       "id": 8,
+      "cookingTime": 145,
       "name": "Blueberry Oatmeal Squares",
       "created": "1989-05-10T04:00:00.000Z",
       "creator": "March Pembroke",
@@ -499,7 +507,8 @@
     },
     {
       "id": 9,
-      "name": "Curried chicken salad",      
+      "cookingTime": 120,
+      "name": "Curried chicken salad",
       "created": "2002-05-11T04:00:00.000Z",
       "creator": "Rosie Jones",
       "ingredients": [
@@ -591,7 +600,7 @@
     },
     {
       "name": "Grandma's Muffins",
-      "created": "2022-05-12T04:00:00.000Z",
+      "created": "2022-05-05T04:00:00.000Z",
       "creator": "Rosie Jones",
       "ingredients": [
         {
@@ -600,20 +609,36 @@
         },
         {
           "quantity": "1 cup",
-          "name": "bread flour"
+          "name": "butter"
         },
         {
-          "quantity": "1 cup ",
-          "name": "blueberries"
+          "quantity": "1 cup",
+          "name": "salt"
         }
       ],
       "steps": [
         "Preheat oven to 350F",
-        "Mix flours",
-        "Add blueberries",
+        "Mix ingredients",
         "Bake"
       ],
-      "id": 12
+      "cookingTime": 100,
+      "id": 10
+    },
+    {
+      "name": "f",
+      "created": "2022-04-05T04:00:00.000Z",
+      "creator": "fff",
+      "ingredients": [
+        {
+          "quantity": "1f",
+          "name": "f"
+        }
+      ],
+      "steps": [
+        "fdsfds"
+      ],
+      "cookingTime": 45,
+      "id": 11
     }
   ]
 }

@@ -84,4 +84,19 @@ code {
   .recipe-card li {
     text-align: left;
   }
+  .favorite-counter {
+    top: 2px;
+    right: 2px;
+  }
+}
+
+.favorite-counter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  background-color: #fff;
+  padding: 5px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
 }

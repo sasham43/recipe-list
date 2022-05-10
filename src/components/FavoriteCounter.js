@@ -24,7 +24,7 @@ export default function FavoriteCounter(props) {
     return (
         <>
             <div className={`favorite-counter`}>
-                {numFavorites} Favorite Recipes
+                {numFavorites} Favorites
             </div>
         </>
     )

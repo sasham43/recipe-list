@@ -1,6 +1,6 @@
 import { useState, } from 'react'
 import { useForm } from '@mantine/form'
-import { Group, TextInput, Button, ActionIcon } from '@mantine/core'
+import { Group, TextInput, Button, ActionIcon, Card } from '@mantine/core'
 import { DatePicker } from '@mantine/dates'
 import { CircleMinus, CirclePlus } from 'tabler-icons-react';
 
@@ -57,107 +57,105 @@ export default function Create(){
 
     return (
         <>
-            <div>Create</div>
-            <form onSubmit={form.onSubmit(handleSubmit)}>
-                <TextInput
-                    required
-                    label="Name"
-                    placeholder="Grandma's Muffins"
-                    {...form.getInputProps('name')}
-                />
-                <DatePicker
-                    label="Created"
-                    placeholder="Jan 1, 1970"
-                    required
-                    {...form.getInputProps('created')}
-                />
-                <TextInput
-                    required
-                    label="Creator"
-                    placeholder="Rosie Jones"
-                    {...form.getInputProps('creator')}
-                />
-                <div>
-                    <div>Ingredients</div>
-                    <ul>
-                        {
-                            form?.values.ingredients?.map((ingredient, index) => {
-                                return (
-                                    <li key={`ingredient-${index}`}>
-                                        <div className={`create-ingredient`}>
-                                            <span>
-                                                {ingredient.quantity} {ingredient.name}
-                                            </span>
-                                            {/* <Button onClick={()=>removeIngredient(index)}>Remove</Button> */}
-                                            <ActionIcon onClick={() => removeIngredient(index)}>
-                                                <CircleMinus></CircleMinus>
-                                            </ActionIcon>
-                                        </div>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                    <div className={'create-ingredients'}>
-                        <TextInput
-                            name="Ingredient Quantity"
-                            placeholder="1 cup"
-                            value={newIngredientQuantity}
-                            onChange={(e) => onQuantity(e.target.value)}
-                        />
-                        <TextInput
-                            name="Ingredient Name"
-                            placeholder="flour"
-                            value={newIngredientName}
-                            onChange={(e) => onName(e.target.value)}
-                            className={`create-ingredient-name`}
-                        />
-                        <ActionIcon onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>
-                            <CirclePlus></CirclePlus>
-                        </ActionIcon>
-                        {/* <Button onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>Add</Button> */}
+            <Card shadow="sm" className={`page-card`}>
+                <h1>Create Recipe</h1>
+                <form onSubmit={form.onSubmit(handleSubmit)}>
+                    <TextInput
+                        required
+                        label="Name"
+                        placeholder="Grandma's Muffins"
+                        {...form.getInputProps('name')}
+                    />
+                    <DatePicker
+                        label="Created"
+                        placeholder="Jan 1, 1970"
+                        required
+                        {...form.getInputProps('created')}
+                    />
+                    <TextInput
+                        required
+                        label="Creator"
+                        placeholder="Rosie Jones"
+                        {...form.getInputProps('creator')}
+                    />
+                    <div className={`create-card`}>
+                        <div>Ingredients</div>
+                        <ul>
+                            {
+                                form?.values.ingredients?.map((ingredient, index) => {
+                                    return (
+                                        <li key={`ingredient-${index}`}>
+                                            <div className={`create-ingredient`}>
+                                                <span>
+                                                    {ingredient.quantity} {ingredient.name}
+                                                </span>
+                                                <ActionIcon onClick={() => removeIngredient(index)}>
+                                                    <CircleMinus></CircleMinus>
+                                                </ActionIcon>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        <div className={'create-ingredients'}>
+                            <TextInput
+                                name="Ingredient Quantity"
+                                placeholder="1 cup"
+                                value={newIngredientQuantity}
+                                onChange={(e) => onQuantity(e.target.value)}
+                            />
+                            <TextInput
+                                name="Ingredient Name"
+                                placeholder="flour"
+                                value={newIngredientName}
+                                onChange={(e) => onName(e.target.value)}
+                                className={`create-ingredient-name`}
+                            />
+                            <ActionIcon onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>
+                                <CirclePlus></CirclePlus>
+                            </ActionIcon>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Steps</div>
-                    <ol>
-                        {
-                            form?.values.steps?.map((step, index) => {
-                                return (
-                                    <li key={`step-${index}`}>
-                                        <div className={`create-step`}>
-                                            <span>
-                                                {step}
-                                            </span>
-                                            <ActionIcon onClick={()=>removeStep(index)}>
-                                                <CircleMinus></CircleMinus>
-                                            </ActionIcon>
-                                            {/* <Button onClick={()=>removeStep(index)}>Remove</Button> */}
-                                        </div>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ol>
-                    <div className={'create-steps'}>
-                        <TextInput
-                            name="Next Step"
-                            value={newStep}
-                            placeholder="Preheat oven to 350F"
-                            onChange={(e) => onStep(e.target.value)}
-                            className={`create-next-step`}
-                        />
-                        <ActionIcon onClick={() => addStep(newStep)}>
-                            <CirclePlus></CirclePlus>
-                        </ActionIcon>
-                        {/* <Button onClick={() => addStep(newStep)}>Add</Button> */}
+                    <div className={`create-card`}>
+                        <div>Steps</div>
+                        <ol>
+                            {
+                                form?.values.steps?.map((step, index) => {
+                                    return (
+                                        <li key={`step-${index}`}>
+                                            <div className={`create-step`}>
+                                                <span>
+                                                    {step}
+                                                </span>
+                                                <ActionIcon onClick={()=>removeStep(index)}>
+                                                    <CircleMinus></CircleMinus>
+                                                </ActionIcon>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ol>
+                        <div className={'create-steps'}>
+                            <TextInput
+                                name="Next Step"
+                                value={newStep}
+                                placeholder="Preheat oven to 350F"
+                                onChange={(e) => onStep(e.target.value)}
+                                className={`create-next-step`}
+                            />
+                            <ActionIcon onClick={() => addStep(newStep)}>
+                                <CirclePlus></CirclePlus>
+                            </ActionIcon>
+                        </div>
                     </div>
-                </div>
 
-                <Group>
-                    <Button type="submit">Save</Button>
-                </Group>
-            </form>
+                    <Group>
+                        <Button type="submit">Save</Button>
+                    </Group>
+                </form>
+            </Card>
         </>
     )
 }

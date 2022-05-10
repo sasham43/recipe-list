@@ -29,9 +29,10 @@ code {
   justify-content: space-evenly;
   align-items: flex-start;
 } */
-.steps,
-.ingredients {
+.create-steps,
+.create-ingredients {
   display: flex;
+  align-items: center;
 }
 
 .ingredient-quantity {
@@ -47,4 +48,16 @@ code {
 
 .recipe-list-item td {
   text-align: left;
+}
+
+.create-step,
+.create-ingredient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-next-step,
+.create-ingredient-name {
+  flex-grow: 1;
 }

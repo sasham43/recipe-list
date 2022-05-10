@@ -1,7 +1,8 @@
 import { useState, } from 'react'
 import { useForm } from '@mantine/form'
-import { Group, TextInput, Button } from '@mantine/core'
+import { Group, TextInput, Button, ActionIcon } from '@mantine/core'
 import { DatePicker } from '@mantine/dates'
+import { CircleMinus, CirclePlus } from 'tabler-icons-react';
 
 import { saveRecipe } from '../recipes'
 
@@ -83,16 +84,21 @@ export default function Create(){
                             form?.values.ingredients?.map((ingredient, index) => {
                                 return (
                                     <li key={`ingredient-${index}`}>
-                                        <span>
-                                            {ingredient.quantity} {ingredient.name}
-                                        </span>
-                                        <Button onClick={()=>removeIngredient(index)}>Remove</Button>
+                                        <div className={`create-ingredient`}>
+                                            <span>
+                                                {ingredient.quantity} {ingredient.name}
+                                            </span>
+                                            {/* <Button onClick={()=>removeIngredient(index)}>Remove</Button> */}
+                                            <ActionIcon onClick={() => removeIngredient(index)}>
+                                                <CircleMinus></CircleMinus>
+                                            </ActionIcon>
+                                        </div>
                                     </li>
                                 )
                             })
                         }
                     </ul>
-                    <div className={'ingredients'}>
+                    <div className={'create-ingredients'}>
                         <TextInput
                             name="Ingredient Quantity"
                             placeholder="1 cup"
@@ -104,8 +110,12 @@ export default function Create(){
                             placeholder="flour"
                             value={newIngredientName}
                             onChange={(e) => onName(e.target.value)}
+                            className={`create-ingredient-name`}
                         />
-                        <Button onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>Add</Button>
+                        <ActionIcon onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>
+                            <CirclePlus></CirclePlus>
+                        </ActionIcon>
+                        {/* <Button onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>Add</Button> */}
                     </div>
                 </div>
                 <div>
@@ -115,23 +125,32 @@ export default function Create(){
                             form?.values.steps?.map((step, index) => {
                                 return (
                                     <li key={`step-${index}`}>
-                                        <span>
-                                            {step}
-                                        </span>
-                                        <Button onClick={()=>removeStep(index)}>Remove</Button>
+                                        <div className={`create-step`}>
+                                            <span>
+                                                {step}
+                                            </span>
+                                            <ActionIcon onClick={()=>removeStep(index)}>
+                                                <CircleMinus></CircleMinus>
+                                            </ActionIcon>
+                                            {/* <Button onClick={()=>removeStep(index)}>Remove</Button> */}
+                                        </div>
                                     </li>
                                 )
                             })
                         }
                     </ol>
-                    <div className={'steps'}>
+                    <div className={'create-steps'}>
                         <TextInput
                             name="Next Step"
                             value={newStep}
                             placeholder="Preheat oven to 350F"
                             onChange={(e) => onStep(e.target.value)}
+                            className={`create-next-step`}
                         />
-                        <Button onClick={() => addStep(newStep)}>Add</Button>
+                        <ActionIcon onClick={() => addStep(newStep)}>
+                            <CirclePlus></CirclePlus>
+                        </ActionIcon>
+                        {/* <Button onClick={() => addStep(newStep)}>Add</Button> */}
                     </div>
                 </div>
 

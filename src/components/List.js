@@ -67,13 +67,13 @@ export default function List() {
                     {
                         recipeList.map((recipe, index) => {
                             return (
-                                <tr key={`recipe-list-item-${index}`}>
+                                <tr key={`recipe-list-item-${index}`} className={`recipe-list-item`}>
                                     <td>
                                         <Link to={`/details/${index}`} >
                                             <div>{recipe.name}</div>
                                         </Link>
                                     </td>
-                                    <td>{recipe.created}</td>
+                                    <td>{recipe.createdDate.format('YYYY')}</td>
                                     <td>{recipe.creator}</td>
                                     <td>{recipe.cookingTime}</td>
                                     <td>

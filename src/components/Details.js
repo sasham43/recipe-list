@@ -33,6 +33,9 @@ export default function Details(){
                     {recipe.creator}
                 </div>
                 <div className={`recipe-item`}>
+                    {recipe.createdDate.format('MMMM D YYYY h a')}
+                </div>
+                <div className={`recipe-item`}>
                     {/* <button>
                         Favorite
                     </button> */}

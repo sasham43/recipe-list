@@ -44,3 +44,7 @@ code {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.recipe-list-item td {
+  text-align: left;
+}

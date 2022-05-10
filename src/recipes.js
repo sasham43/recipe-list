@@ -1,3 +1,5 @@
+import dayjs from 'dayjs'
+
 export async function getRecipes(params){
     let recipeData = await fetch('http://localhost:3000/recipes')
 
@@ -14,10 +16,13 @@ export async function getRecipes(params){
         // console.log('hours', cookingHours)
         let cookingTime = cookingHours.toFixed(2)
         // console.log('time', cookingTime)
+
+        let createdDate = dayjs(recipe.created)
         
         return {
             ...recipe,
-            cookingTime
+            cookingTime,
+            createdDate
         }
     }).filter((recipe, index) => {
         // simulates get single recipe function

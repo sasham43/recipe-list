@@ -1,6 +1,6 @@
 import { useState, } from 'react'
 import { useForm } from '@mantine/form'
-import { Group, TextInput, Button, ActionIcon, Card } from '@mantine/core'
+import { Group, TextInput, NumberInput, Button, ActionIcon, Card } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import { DatePicker } from '@mantine/dates'
 import { CircleMinus, CirclePlus, ArrowLeft } from 'tabler-icons-react';
@@ -82,6 +82,12 @@ export default function Create(){
                         required
                         label="Creator"
                         placeholder="Rosie Jones"
+                        {...form.getInputProps('creator')}
+                    />
+                    <NumberInput
+                        required
+                        label="Cooking Time (minutes)"
+                        placeholder="120"
                         {...form.getInputProps('creator')}
                     />
                     <div className={`create-card`}>

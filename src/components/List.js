@@ -39,7 +39,7 @@ export default function List() {
                         <th className={`center-table-cell`}>Year Created</th>
                         <th>Creator</th>
                         <th className={`center-table-cell`}>Cooking Time</th>
-                        <th className={`center-table-cell`}>Favorite</th>
+                        <th className={`center-table-cell favorite-header`}>Favorite</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +48,9 @@ export default function List() {
                             return (
                                 <tr key={`recipe-list-item-${index}`} className={`recipe-list-item`}>
                                     <td>
+                                        <div className={`favorite-list-mobile-btn`}>
+                                            <Favorite index={index}></Favorite>
+                                        </div>
                                         <Link to={`/details/${index}`} >
                                             <div>{recipe.name}</div>
                                         </Link>

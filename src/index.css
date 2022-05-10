@@ -67,6 +67,12 @@ code {
   align-items: center;
 }
 
+.create-steps button,
+.create-ingredients button {
+  align-self: end;
+  margin-bottom: 4px;
+}
+
 .create-next-step,
 .create-ingredient-name {
   flex-grow: 1;

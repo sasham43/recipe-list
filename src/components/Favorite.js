@@ -45,7 +45,7 @@ export default function Favorite(props) {
             {/* <button onClick={toggleFavorite}>
                 Favorite { isFavorite ? 'y' : 'n'}
             </button> */}
-            <ActionIcon onClick={() => toggleFavorite()}>
+            <ActionIcon onClick={() => toggleFavorite()} title={'Favorite This Recipe'}>
                 <Heart fill={isFavorite ? 'currentColor' : 'rgba(0,0,0,0)'}></Heart>
             </ActionIcon>
         </>

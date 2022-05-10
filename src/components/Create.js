@@ -60,8 +60,8 @@ export default function Create(){
         <>
             <Card shadow="sm" className={`page-card`}>
                 <Link to={`/`}>
-                    <ActionIcon>
-                        <ArrowLeft></ArrowLeft>
+                    <ActionIcon title={'Back to Recipe List'}>
+                        <ArrowLeft alt={'Back to Recipe List'}></ArrowLeft>
                     </ActionIcon>
                 </Link>
                 <h1>Create Recipe</h1>
@@ -101,8 +101,8 @@ export default function Create(){
                                                 <span>
                                                     {ingredient.quantity} {ingredient.name}
                                                 </span>
-                                                <ActionIcon onClick={() => removeIngredient(index)}>
-                                                    <CircleMinus></CircleMinus>
+                                                <ActionIcon title={'Remove Ingredient'} onClick={() => removeIngredient(index)}>
+                                                    <CircleMinus alt={'Remove Ingredient'}></CircleMinus>
                                                 </ActionIcon>
                                             </div>
                                         </li>
@@ -112,20 +112,20 @@ export default function Create(){
                         </ul>
                         <div className={'create-ingredients'}>
                             <TextInput
-                                name="Ingredient Quantity"
+                                label="Ingredient Quantity"
                                 placeholder="1 cup"
                                 value={newIngredientQuantity}
                                 onChange={(e) => onQuantity(e.target.value)}
                             />
                             <TextInput
-                                name="Ingredient Name"
+                                label="Ingredient Name"
                                 placeholder="flour"
                                 value={newIngredientName}
                                 onChange={(e) => onName(e.target.value)}
                                 className={`create-ingredient-name`}
                             />
-                            <ActionIcon onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>
-                                <CirclePlus></CirclePlus>
+                            <ActionIcon title={'Add Ingredient'} onClick={() => addIngredient(newIngredientQuantity, newIngredientName)}>
+                                <CirclePlus alt={'Add Ingredient'}></CirclePlus>
                             </ActionIcon>
                         </div>
                     </div>
@@ -140,8 +140,8 @@ export default function Create(){
                                                 <span>
                                                     {step}
                                                 </span>
-                                                <ActionIcon onClick={()=>removeStep(index)}>
-                                                    <CircleMinus></CircleMinus>
+                                                <ActionIcon onClick={()=>removeStep(index)} title={'Remove Step'}>
+                                                    <CircleMinus alt={'Remove Step'}></CircleMinus>
                                                 </ActionIcon>
                                             </div>
                                         </li>
@@ -151,20 +151,20 @@ export default function Create(){
                         </ol>
                         <div className={'create-steps'}>
                             <TextInput
-                                name="Next Step"
+                                label="Next Step"
                                 value={newStep}
                                 placeholder="Preheat oven to 350F"
                                 onChange={(e) => onStep(e.target.value)}
                                 className={`create-next-step`}
                             />
-                            <ActionIcon onClick={() => addStep(newStep)}>
-                                <CirclePlus></CirclePlus>
+                            <ActionIcon onClick={() => addStep(newStep)} title={'Add Step'}>
+                                <CirclePlus alt={'Add Step'}></CirclePlus>
                             </ActionIcon>
                         </div>
                     </div>
 
                     <Group>
-                        <Button type="submit">Save</Button>
+                        <Button color="dark" title={'Save Recipe'} type="submit">Save</Button>
                     </Group>
                 </form>
             </Card>

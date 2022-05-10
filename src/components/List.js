@@ -26,7 +26,7 @@ export default function List() {
                 <h1>Sasha's Recipe List</h1>
                 <div>
                     <Link to={`/create`}>
-                        <ActionIcon>
+                        <ActionIcon title={'Create New Recipe'}>
                             <Plus></Plus>
                         </ActionIcon>
                     </Link>

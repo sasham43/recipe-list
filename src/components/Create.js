@@ -20,7 +20,6 @@ export default function Create(){
     })
 
     function handleSubmit(values){
-        console.log('values', values)
         saveRecipe(values)
 
         setOpened(true)
@@ -40,7 +39,7 @@ export default function Create(){
     }
     function addIngredient(quantity, name){
         form.setFieldValue('ingredients', [...form.values.ingredients, {quantity, name}])
-        console.log('form', form)
+
         setNewIngredientQuantity('')
         setNewIngredientName('')
     }
@@ -169,7 +168,6 @@ export default function Create(){
                     </div>
 
                     <Group>
-                        {/* <Button color="dark" title={'Save Recipe'} type="submit">Save</Button> */}
                         <Popover
                             opened={opened}
                             onClose={() => setOpened(false)}

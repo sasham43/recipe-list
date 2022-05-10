@@ -623,22 +623,6 @@
       ],
       "cookingTime": 100,
       "id": 10
-    },
-    {
-      "name": "f",
-      "created": "2022-04-05T04:00:00.000Z",
-      "creator": "fff",
-      "ingredients": [
-        {
-          "quantity": "1f",
-          "name": "f"
-        }
-      ],
-      "steps": [
-        "fdsfds"
-      ],
-      "cookingTime": 45,
-      "id": 11
     }
   ]
 }

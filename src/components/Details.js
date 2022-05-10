@@ -11,7 +11,6 @@ export default function Details(){
 
     const [recipe, setRecipe] = useState()
 
-    // console.log('what do we have', params)
     useEffect(() => {
         async function getRecipe(){
             let data = await getRecipes({index: params.index})

@@ -6,7 +6,6 @@ export default function FavoriteCounter(props) {
     function checkNumFavorites(){
         let favoritesJSON = window.localStorage.getItem('favorites')
         let favorites = JSON.parse(favoritesJSON)
-        // console.log('setting', favorites)
 
         if(favorites){
             setNumFavorites(favorites.length)

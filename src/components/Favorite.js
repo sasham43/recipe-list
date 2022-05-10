@@ -10,8 +10,6 @@ export default function Favorite(props) {
         let favorites = JSON.parse(favoritesJSON)
         let index = Number(props.index)
 
-        // console.log('favorites', favorites)
-
         if(favorites.includes(index)){
             favorites = favorites.filter(item => item != index)
         } else {
@@ -19,7 +17,6 @@ export default function Favorite(props) {
         }
         window.localStorage.setItem('favorites', JSON.stringify(favorites))
         checkFavorite()
-        // window.dispatchEvent('storage')
         window.dispatchEvent( new Event('storage') ) 
     }
 
@@ -42,9 +39,6 @@ export default function Favorite(props) {
 
     return (
         <>
-            {/* <button onClick={toggleFavorite}>
-                Favorite { isFavorite ? 'y' : 'n'}
-            </button> */}
             <ActionIcon onClick={() => toggleFavorite()} title={'Favorite This Recipe'}>
                 <Heart fill={isFavorite ? 'currentColor' : 'rgba(0,0,0,0)'}></Heart>
             </ActionIcon>

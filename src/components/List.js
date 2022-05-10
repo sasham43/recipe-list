@@ -73,7 +73,7 @@ export default function List() {
                                             <div>{recipe.name}</div>
                                         </Link>
                                     </td>
-                                    <td>{recipe.creation_year}</td>
+                                    <td>{recipe.created}</td>
                                     <td>{recipe.creator}</td>
                                     <td>{recipe.cookingTime}</td>
                                     <td>

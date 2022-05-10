@@ -68,6 +68,7 @@ export default function Create(){
                     label="Created"
                     placeholder="Jan 1, 1970"
                     required
+                    {...form.getInputProps('created')}
                 />
                 <TextInput
                     required

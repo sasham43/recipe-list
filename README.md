@@ -1,70 +1,7 @@
-# Getting Started with Create React App
+# Sasha's Recipe List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project
+I found this project pretty straightforward, I've built many SPAs for previous companies with exactly this sort of functionality.  Working with JSON-Server was a first for me, but it seems like a really great prototyping tool.  I would say the main difficulty I had was working with sample data.  I grabbed the first set of sample JSON recipes so I could put data on the page, but if I did it over I would probably start with the Create screen then use that to build up a dataset of recipes.  I also would have liked to include more color, but the UI library I chose (while otherwise a pleasure to work with) had accessibility contrast issues with the button colors I tried, so I elected to keep it simple.  In the future, I would choose a different UI library that has a better focus on accessibility to avoid those issues from cropping up at all.  The other third party libraries I used were React Router and Dayjs.  I considered just building a simple hide/show system for the different screens, but in the interest in extensibility added the router.  I add Dayjs (or equivalent date parsing library) to any project where any date manipulation is necessary because I strongly dislike the built-in tools for Javascript Date parsing.  It seems they are working on an improvement (Temporal) but I'll wait until its production ready to start using it.  
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+Even though I completed this project in plenty of time, I felt very rushed while doing it.  This led to me missing a few things, most notably that the Favorites weren't supposed to be stored in local storage.  I just read the database part.  It was already working by the time I realized that, if I had to do it again I would probably store it in a cookie but functionality-wise it's on par with local storage.  I also missed the fact that I was supposed to have a full page for the favorites.  I would use my same list component, but when I pull in the list of recipes, check which ones are favorited and run a simple Array.filter to only show the favorited recipes.

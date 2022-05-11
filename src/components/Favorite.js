@@ -17,6 +17,8 @@ export default function Favorite(props) {
         }
         window.localStorage.setItem('favorites', JSON.stringify(favorites))
         checkFavorite()
+
+        // dispatch event so the favorite counter can update itself
         window.dispatchEvent( new Event('storage') ) 
     }
 
@@ -33,6 +35,7 @@ export default function Favorite(props) {
     }
 
     useEffect(() => {
+        // when the index changes, check to see if this recipe is favorited
         checkFavorite()
     }, [props?.index])
     
